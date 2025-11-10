@@ -38,8 +38,8 @@ function Hero() {
     <section id="home" className="relative min-h-[88vh] pt-24 pb-16">
       {/* Background image */}
       <img
-        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1920&auto=format&fit=crop"
-        alt="Modern college campus"
+        src="https://www.shutterstock.com/image-photo/abstract-background-graduation-day-cap-600nw-2585923803.jpg"
+        alt="Graduation day abstract background"
         className="absolute inset-0 h-full w-full object-cover"
       />
       {/* Gradient overlays for readability */}
