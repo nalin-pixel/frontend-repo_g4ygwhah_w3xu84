@@ -35,65 +35,57 @@ function Nav() {
 function Hero() {
   const scrollToApply = () => document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' })
   return (
-    <section id="home" className="relative pt-20 md:pt-24 pb-12 md:pb-20 bg-gradient-to-b from-white to-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
-        {/* Left: Content */}
-        <div className="lg:col-span-7">
-          <div className="inline-flex items-center gap-2 bg-blue-600/10 border border-blue-600/20 rounded-full px-3 py-1 mb-5 text-blue-700">
-            <Sparkles size={16} className="text-blue-700" />
+    <section id="home" className="relative min-h-[88vh] pt-24 pb-16">
+      {/* Background image */}
+      <img
+        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1920&auto=format&fit=crop"
+        alt="Modern college campus"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* Gradient overlays for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30" />
+      <div className="absolute inset-0 bg-[radial-gradient(800px_300px_at_20%_20%,rgba(37,99,235,0.25),transparent),radial-gradient(800px_300px_at_90%_80%,rgba(245,158,11,0.20),transparent)]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 mb-5 text-white backdrop-blur-sm">
+            <Sparkles size={16} className="text-amber-300" />
             <span className="text-xs font-semibold">Admissions Open • 4-Year B.Tech Program</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-gray-900">
+          <h1 className="text-4xl sm:text-6xl font-black leading-tight tracking-tight text-white drop-shadow-md">
             B.Tech AI/CS: Graduate with 18 Months of Paid Industrial Experience
           </h1>
-          <p className="mt-4 text-lg sm:text-xl text-gray-700 max-w-2xl">
+          <p className="mt-4 text-lg sm:text-xl text-white/90 max-w-2xl">
             A rigorous, practice-led program designed by IIIT-H alumni. Graduate with a portfolio, references, and confidence.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <button onClick={scrollToApply} className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-md shadow-lg transition font-semibold">
               Start Application <ArrowRight size={18} />
             </button>
-            <a href="#program" onClick={(e)=>{e.preventDefault(); document.getElementById('program')?.scrollIntoView({behavior:'smooth'})}} className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-amber-500 text-amber-600 hover:bg-amber-50 transition font-semibold">
+            <a href="#program" onClick={(e)=>{e.preventDefault(); document.getElementById('program')?.scrollIntoView({behavior:'smooth'})}} className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-amber-400 text-amber-300 hover:bg-amber-400/10 transition font-semibold">
               Explore Program
             </a>
           </div>
 
           {/* Highlights */}
           <div className="mt-10 grid sm:grid-cols-2 gap-4">
-            {[ 
-              { label: '18 Months Industrial Experience', icon: Briefcase, accent: 'text-blue-700 bg-blue-50 border-blue-200' },
-              { label: 'Mentor with Industry Leaders', icon: UserCheck, accent: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
-              { label: 'Modern Labs (AI • Cloud • Systems)', icon: Cpu, accent: 'text-amber-700 bg-amber-50 border-amber-200' },
-              { label: 'Graduate with Portfolio & References', icon: BadgeCheck, accent: 'text-purple-700 bg-purple-50 border-purple-200' },
+            {[
+              { label: '18 Months Industrial Experience', icon: Briefcase, accent: 'from-blue-500/30 to-blue-400/20 border-blue-300/30' },
+              { label: 'Mentor with Industry Leaders', icon: UserCheck, accent: 'from-emerald-500/30 to-emerald-400/20 border-emerald-300/30' },
+              { label: 'Modern Labs (AI • Cloud • Systems)', icon: Cpu, accent: 'from-amber-500/30 to-amber-400/20 border-amber-300/30' },
+              { label: 'Graduate with Portfolio & References', icon: BadgeCheck, accent: 'from-purple-500/30 to-purple-400/20 border-purple-300/30' },
             ].map((item, idx) => (
-              <div key={idx} className={`flex items-center gap-3 rounded-xl border px-4 py-3 ${item.accent}`}>
+              <div key={idx} className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-white backdrop-blur-md bg-gradient-to-br ${item.accent}`}>
                 {React.createElement(item.icon, { size: 18 })}
                 <span className="text-sm font-semibold">{item.label}</span>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Right: Glassmorphic Image */}
-        <div className="lg:col-span-5">
-          <div className="relative h-[420px] sm:h-[460px] rounded-2xl overflow-hidden border border-black/10 shadow-xl">
-            <img
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1400&auto=format&fit=crop"
-              alt="Modern college environment"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            {/* Glass overlay panel */}
-            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/5" />
-            <div className="absolute inset-3 rounded-xl bg-white/15 backdrop-blur-md border border-white/30 shadow-inner" />
-            {/* Floating chips */}
-            <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
-              {['AI Studio','Cloud Lab','Systems Lab','Mentor Pods'].map((tag) => (
-                <span key={tag} className="text-xs text-white/90 bg-white/10 backdrop-blur px-2.5 py-1 rounded-full border border-white/20">{tag}</span>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
+
+      {/* subtle bottom fade into next section */}
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white" />
     </section>
   )
 }
