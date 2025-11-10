@@ -38,12 +38,14 @@ function Hero() {
     <section id="home" className="relative min-h-[88vh] pt-24 pb-16">
       {/* Background image */}
       <img
-        src="https://www.shutterstock.com/image-photo/abstract-background-graduation-day-cap-600nw-2585923803.jpg"
+        src="https://media.fortuneindia.com/fortune-india/2025-05-06/0hwme91t/shutterstock2416300097767624768301.jpeg?auto=format,compress&format=webp&w=1200&h=675&dpr=1.0&q=90&fit=cover"
         alt="Graduation day abstract background"
         className="absolute inset-0 h-full w-full object-cover"
       />
       {/* Gradient overlays for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30" />
+      {/* Subtle blue tint for a neutral, cohesive look */}
+      <div className="absolute inset-0 bg-blue-600/25 mix-blend-multiply" />
       <div className="absolute inset-0 bg-[radial-gradient(800px_300px_at_20%_20%,rgba(37,99,235,0.25),transparent),radial-gradient(800px_300px_at_90%_80%,rgba(245,158,11,0.20),transparent)]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +55,7 @@ function Hero() {
             <span className="text-xs font-semibold">Admissions Open • 4-Year B.Tech Program</span>
           </div>
           <h1 className="text-4xl sm:text-6xl font-black leading-tight tracking-tight text-white drop-shadow-md">
-            B.Tech AI/CS: Graduate with 18 Months of Paid Industrial Experience
+            Graduate with 1.5 Years of Industrial Experience.
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-white/90 max-w-2xl">
             A rigorous, practice-led program designed by IIIT-H alumni. Graduate with a portfolio, references, and confidence.
